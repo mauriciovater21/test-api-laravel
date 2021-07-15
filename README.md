@@ -14,7 +14,7 @@ Features (API) include:
 
 - Laravel passport package
 - Authentication using passport
-- Logout to remove old tokens 
+- Register User and Login with token as response
 - Create product.
 - List products.
 - Update product.
@@ -35,10 +35,17 @@ Install commands:
 
 ```
 
-Use Postman to test the API.
+Please, Use Postman to test the API.
 
 
 ## Note
+- Register:
+    - URL: http://your-localhost/api/register 
+    - Method: POST
+    - Insert email and password: Body tab => x-www-form-urlencode
+    - Press Enter to get Bearer token;
+    - For future request add this token: 
+      <br>Authorization tab: Type => Bearer Token; Insert token.
 
 - Login: 
     - URL: http://your-localhost/api/login 
@@ -49,10 +56,18 @@ Use Postman to test the API.
       <br>Authorization tab: Type => Bearer Token; Insert token.
     
 - Insert/Update:
+    - URL: http://your-localhost/api/products
+    - Method: POST
     - Use Body tab => x-www-form-urlencode : Add title key and its value
-    - Another way: Body tab => raw : select json type 
-- Demo User (database/seeders/DatabaseSeeder.php): 
-<br> ```admin@admin.com/password```
+    - Another way: Body tab => raw : select json type
+    - For update, change the URL and METHOD:
+    - URL: http://your-localhost/api/products/{id}
+    - Method: PUT
+
+- Get Products:
+    - URL: http://your-localhost/api/products
+    - Method: GET
+
 
 
 ## License
